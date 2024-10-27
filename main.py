@@ -7,12 +7,13 @@ class Iris:
         self.sepal_width = float(sepal_width)
         self.petal_length = float(petal_length)
         self.petal_width = float(petal_width)
-        if species == 0:
+        if species == '0':
             self.species = "setosa"
-        elif species == 1:
+        elif species == '1':
             self.species = "verbosa"
         else:
             self.species = "virginica"
+
     def __repr__(self):
         return f"Iris(sepal_length={self.sepal_length}, sepal_width={self.sepal_width}, petal_length={self.petal_length}, petal_width={self.petal_width}, species={self.species}"
 
@@ -30,18 +31,14 @@ with open("data1.csv") as data:
         iris = Iris(sepal_length, sepal_width, petal_length, petal_width, species)
         irises.append(iris)
 
-
-
 for iris in irises:
     print(iris)
 
-
-species_count={"setosa":0, "verbosa":0, "virginica":0}
-
+species_count = {"setosa": 0, "verbosa": 0, "virginica": 0}
 
 for iris in irises:
     for key in species_count:
         if iris.species == key:
-            species_count[key]+=1
+            species_count[key] += 1
 
 print(species_count)
