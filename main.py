@@ -1,4 +1,5 @@
 import csv
+import formulas
 
 
 class Iris:
@@ -42,3 +43,19 @@ for iris in irises:
             species_count[key] += 1
 
 print(species_count)
+
+sepals_len = []
+sepals_wid = []
+petals_len = []
+petals_wid = []
+for iris in irises:
+    sepals_len.append(iris.sepal_length)
+    sepals_wid.append(iris.sepal_width)
+    petals_len.append(iris.petal_length)
+    petals_wid.append(iris.sepal_width)
+
+print(formulas.find_min(sepals_len))
+print(formulas.Q1(sepals_len))
+print(formulas.Q3(sepals_len))
+
+
