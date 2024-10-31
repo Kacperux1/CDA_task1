@@ -1,18 +1,21 @@
-from cmath import sqrt
-
+from math import sqrt
+from statistics import variance
 
 def arithmetic_average(values):
     sum = 0
     for value in values:
-        sum += values
+        sum += value
     return sum / len(values)
 
+def variation(values):
+    temp = 0
+    ar_ave = arithmetic_average(values)
+    for value in values:
+        temp += (value-ar_ave)**2
+    return temp / len(values)
 
 def standard_deviation(values):
-    temp = 0
-    for value in values:
-        temp += pow((value, arithmetic_average(values)), 2)
-    return sqrt(1 / values.len * temp)
+    return sqrt(variation(values))
 
 
 def find_max(values):
@@ -33,10 +36,10 @@ def find_min(values):
 
 def median(values):
     values.sort()
-    if values.len % 2 == 0:
-        return (values[values.len / 2 - 1] + values[values.len / 2]) / 2
+    if len(values) % 2 == 0:
+        return (values[round(len(values) / 2) - 1] + values[round(len(values) / 2)]) / 2
     else:
-        return values[values.len / 2]
+        return values[(round(len(values) / 2))-1]
 
 
 def Q1(values):
