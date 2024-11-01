@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="n">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="poprawki w formułach, tabela1 ,mniej wiecej taka jak w zadaniu obliczona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulas.py" beforeDir="false" afterPath="$PROJECT_DIR$/formulas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729774795959</updated>
-      <workItem from="1730375463613" duration="6463000" />
+      <workItem from="1730375463613" duration="7779000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -121,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730030107345</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="poprawki w formułach, tabela1 ,mniej wiecej taka jak w zadaniu obliczona">
+      <option name="closed" value="true" />
+      <created>1730386246840</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730386246840</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,10 +136,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="new file, reading from file fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="new file, reading from file fix" />
+    <MESSAGE value="poprawki w formułach, tabela1 ,mniej wiecej taka jak w zadaniu obliczona" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawki w formułach, tabela1 ,mniej wiecej taka jak w zadaniu obliczona" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1730385639839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1730386586691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas.coverage" NAME="formulas Coverage Results" MODIFIED="1730385249880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

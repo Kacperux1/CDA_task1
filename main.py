@@ -57,11 +57,11 @@ print(formulas.find_min(sepals_len))
 print(formulas.Q1(sepals_len))
 print(formulas.Q3(sepals_len))
 
-table1Date = [
+table2Date = [
     ["długosc dzialki kielicha: ", formulas.find_min(sepals_len), str(round(formulas.arithmetic_average(sepals_len), 2))+"(+-"+str(round(formulas.standard_deviation(sepals_len), 2))+")", str(formulas.median(sepals_len))+"("+str(formulas.Q1(sepals_len))+" - "+str(formulas.Q3(sepals_len))+")", formulas.find_max(sepals_len)],
     ["szerokosc dzialki kielicha: ", formulas.find_min(sepals_wid), str(round(formulas.arithmetic_average(sepals_wid), 2))+"(+-"+str(round(formulas.standard_deviation(sepals_wid), 2))+")", str(formulas.median(sepals_wid))+"("+str(formulas.Q1(sepals_wid))+" - "+str(formulas.Q3(sepals_wid))+")", formulas.find_max(sepals_wid)],
     ["długosc platka: ", formulas.find_min(petals_len), str(round(formulas.arithmetic_average(petals_len), 2))+"(+-"+str(round(formulas.standard_deviation(petals_len), 2))+")", str(formulas.median(petals_len))+"("+str(formulas.Q1(petals_len))+" - "+str(formulas.Q3(petals_len))+")", formulas.find_max(petals_len)],
     ["szerokosc platka: ", formulas.find_min(petals_wid), str(round(formulas.arithmetic_average(petals_wid), 2))+"(+-"+str(round(formulas.standard_deviation(petals_wid), 2))+")", str(formulas.median(petals_wid))+"("+str(formulas.Q1(petals_wid))+" - "+str(formulas.Q3(petals_wid))+")", formulas.find_max(petals_wid)]
 ]
 
-print(table1Date)
+print(table2Date)
