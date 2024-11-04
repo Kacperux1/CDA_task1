@@ -1,6 +1,9 @@
 import csv
-import formulas
 
+import numpy as np
+
+import formulas
+import matplotlib.pyplot as plt
 class Iris:
     def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
         self.sepal_length = float(sepal_length)
@@ -31,8 +34,8 @@ with open("data1.csv") as data:
         iris = Iris(sepal_length, sepal_width, petal_length, petal_width, species)
         irises.append(iris)
 
-for iris in irises:
-    print(iris)
+#for iris in irises:
+    #print(iris)
 
 species_count = {"setosa": 0, "verbosa": 0, "virginica": 0}
 
@@ -65,3 +68,32 @@ table2Date = [
 ]
 
 print(table2Date)
+
+plt.hist(sepals_len, bins=np.arange(formulas.find_min(sepals_len), formulas.find_max(sepals_len), 0.5), alpha=0.5, label='Data 2', color='blue', edgecolor='black', align='mid')
+
+plt.title('Długość działki kielicha')
+plt.xlabel('Długość (cm)')
+plt.ylabel('Liczebność')
+
+plt.show()
+
+plt.hist(sepals_wid, bins=np.arange(formulas.find_min(sepals_wid), formulas.find_max(sepals_wid), 0.5), alpha=0.5, label='Data 2', color='blue', edgecolor='black')
+plt.title('Szerokość działki kielicha')
+plt.xlabel('Długość (cm)')
+plt.ylabel('Liczebność')
+
+plt.show()
+
+plt.hist(petals_len, bins=np.arange(formulas.find_min(petals_len), formulas.find_max(petals_len), 0.5), alpha=0.5, label='Data 2', color='blue', edgecolor='black')
+plt.title('Długość płatka')
+plt.xlabel('Długość (cm)')
+plt.ylabel('Liczebność')
+
+plt.show()
+
+plt.hist(petals_wid, bins=np.arange(formulas.find_min(petals_wid), formulas.find_max(petals_wid), 0.5), alpha=0.5, label='Data 2', color='blue', edgecolor='black')
+plt.title('Szerokość płatka')
+plt.xlabel('Długość (cm)')
+plt.ylabel('Liczebność')
+
+plt.show()
