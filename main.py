@@ -115,14 +115,14 @@ plt.xlabel("Gatunek")
 plt.savefig("pudelkowy_sepal_len.png", dpi=300)
 
 plt.figure()
-plt.hist(sepals_wid, bins=np.arange((np.floor(formulas.find_min(sepals_wid) * 2) / 2),
-                                    (np.ceil(formulas.find_max(sepals_wid) * 2) / 2 + 0.5), 0.25), alpha=0.5,
+plt.hist(sepals_wid, bins=np.arange((np.floor(formulas.find_min(sepals_wid) * 4) / 4),
+                                    (np.ceil(formulas.find_max(sepals_wid) * 4) / 4 + 0.25), 0.25), alpha=0.5,
          label='Data 2', color='blue', edgecolor='black')
 plt.title('Szerokość działki kielicha')
 plt.xlabel('Długość (cm)')
 plt.ylabel('Liczebność')
-plt.xticks(np.arange((np.floor(formulas.find_min(sepals_wid) * 2) / 2),
-                     (np.ceil(formulas.find_max(sepals_wid) * 2) / 2 + 0.5), 0.25))
+plt.xticks(np.arange((np.floor(formulas.find_min(sepals_wid) * 4) / 4),
+                     (np.ceil(formulas.find_max(sepals_wid) * 4) / 4 + 0.25), 0.25))
 plt.savefig("histogram_sepal_width.png", dpi=300)
 
 plt.figure()
