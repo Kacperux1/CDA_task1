@@ -59,10 +59,10 @@ for iris in irises:
     petals_len.append(iris.petal_length)
     petals_wid.append(iris.sepal_width)
 
-init_sepals_len = [sepals_len]
-init_sepals_wid = [sepals_wid]
-init_petals_len = [petals_len]
-init_petals_wid = [petals_len]
+init_sepals_len = sepals_len[:]
+init_sepals_wid = sepals_wid[:]
+init_petals_len = petals_len[:]
+init_petals_wid = petals_wid[:]
 
 print(formulas.find_min(sepals_len))
 print(formulas.Q1(sepals_len))
@@ -93,10 +93,6 @@ table2Date = [
 
 print(table2Date)
 
-corelation1 = formulas.pearson_linear_corelation(sepals_len, sepals_wid)
-print("r = " + str(corelation1))
-regression1 = formulas.linear_regression(sepals_len, sepals_wid)
-print("y = " + str(regression1["a"]) + "x + " + str(regression1["b"]))
 
 plt.hist(sepals_len, bins=np.arange(formulas.find_min(sepals_len), formulas.find_max(sepals_len), 0.5), alpha=0.5,
          label='Data 2', color='blue', edgecolor='black', align='mid')
@@ -165,13 +161,61 @@ plt.show()
 
 
 corelation1 = formulas.pearson_linear_corelation(init_sepals_len, init_sepals_wid)
-print("r = " + str(corelation1))
 regression1 = formulas.linear_regression(init_sepals_len, init_sepals_wid)
-print("y = " + str(regression1["a"]) + "x + " + str(regression1["b"]))
 
+plt.scatter(init_sepals_len, init_sepals_wid, color='blue')
+plt.plot(np.array(init_sepals_len), regression1["a"] * np.array(init_sepals_len) + regression1["b"], color='red')
+plt.title("r = " + str(round(corelation1, 2)) + "y = " + str(round(regression1["a"], 1)) + "x + " + str(round(regression1["b"], 1)))
+plt.xlabel("Długość działki kielicha (cm)")
+plt.ylabel('Szerokość działki kielicha (cm)')
+plt.show()
 
-plt.scatter(sepals_len, sepals_wid, color='blue')
-plt.plot(sepals_len, regression1["a"] * np.array(sepals_len) + regression1["b"], color='red')
-plt.xlabel('X')
-plt.ylabel('Y')
+corelation2 = formulas.pearson_linear_corelation(init_sepals_len, init_petals_len)
+regression2 = formulas.linear_regression(init_sepals_len, init_petals_len)
+
+plt.scatter(init_sepals_len, init_petals_len, color='blue')
+plt.plot(np.array(init_sepals_len), regression2["a"] * np.array(init_sepals_len) + regression2["b"], color='red')
+plt.title("r = " + str(round(corelation2, 2)) + "y = " + str(round(regression2["a"], 1)) + "x + " + str(round(regression2["b"], 1)))
+plt.xlabel("Długość działki kielicha (cm)")
+plt.ylabel('Długość płatka (cm)')
+plt.show()
+
+corelation3 = formulas.pearson_linear_corelation(init_sepals_len, init_petals_wid)
+regression3 = formulas.linear_regression(init_sepals_len, init_petals_wid)
+
+plt.scatter(init_sepals_len, init_petals_wid, color='blue')
+plt.plot(np.array(init_sepals_len), regression3["a"] * np.array(init_sepals_len) + regression3["b"], color='red')
+plt.title("r = " + str(round(corelation3, 2)) + "y = " + str(round(regression3["a"], 1)) + "x + " + str(round(regression3["b"], 1)))
+plt.xlabel("Długość działki kielicha (cm)")
+plt.ylabel('Szerokość płatka (cm)')
+plt.show()
+
+corelation4 = formulas.pearson_linear_corelation(init_sepals_wid, init_petals_len)
+regression4 = formulas.linear_regression(init_sepals_wid, init_petals_len)
+
+plt.scatter(init_sepals_wid, init_petals_len, color='blue')
+plt.plot(np.array(init_sepals_wid), regression4["a"] * np.array(init_sepals_wid) + regression4["b"], color='red')
+plt.title("r = " + str(round(corelation4, 2)) + "y = " + str(round(regression4["a"], 1)) + "x + " + str(round(regression4["b"], 1)))
+plt.xlabel("Szerokość działki kielicha (cm)")
+plt.ylabel('Długość płatka (cm)')
+plt.show()
+
+corelation5 = formulas.pearson_linear_corelation(init_sepals_wid, init_petals_wid)
+regression5 = formulas.linear_regression(init_sepals_wid, init_petals_wid)
+
+plt.scatter(init_sepals_wid, init_petals_wid, color='blue')
+plt.plot(np.array(init_sepals_wid), regression5["a"] * np.array(init_sepals_wid) + regression5["b"], color='red')
+plt.title("r = " + str(round(corelation5, 2)) + "y = " + str(round(regression5["a"], 1)) + "x + " + str(round(regression5["b"], 1)))
+plt.xlabel("Szerokość działki kielicha (cm)")
+plt.ylabel('Szerokość płatka (cm)')
+plt.show()
+
+corelation6 = formulas.pearson_linear_corelation(init_petals_len, init_petals_wid)
+regression6 = formulas.linear_regression(init_petals_len, init_petals_wid)
+
+plt.scatter(init_petals_len, init_petals_wid, color='blue')
+plt.plot(np.array(init_petals_len), regression6["a"] * np.array(init_petals_len) + regression6["b"], color='red')
+plt.title("r = " + str(round(corelation6, 2)) + "y = " + str(round(regression6["a"], 1)) + "x + " + str(round(regression6["b"], 1)))
+plt.xlabel("Długość płatka (cm)")
+plt.ylabel('Szerokość płatka (cm)')
 plt.show()

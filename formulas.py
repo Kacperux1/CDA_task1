@@ -3,10 +3,11 @@ from statistics import variance
 
 
 def arithmetic_average(values):
-    sum = 0
+    total = 0
     for value in values:
-        sum += value
-    return sum / len(values)
+        total += value
+
+    return total / len(values)
 
 
 
