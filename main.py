@@ -57,7 +57,7 @@ for iris in irises:
     sepals_len.append(iris.sepal_length)
     sepals_wid.append(iris.sepal_width)
     petals_len.append(iris.petal_length)
-    petals_wid.append(iris.sepal_width)
+    petals_wid.append(iris.petal_width)
 
 init_sepals_len = sepals_len[:]
 init_sepals_wid = sepals_wid[:]
