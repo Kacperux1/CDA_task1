@@ -192,7 +192,7 @@ regression1 = formulas.linear_regression(init_sepals_len, init_sepals_wid)
 
 plt.figure()
 plt.scatter(init_sepals_len, init_sepals_wid, color='blue')
-plt.plot(np.array(init_sepals_len), regression1["a"] * np.array(init_sepals_len) + regression1["b"], color='red')
+plt.plot(init_sepals_len, regression1["a"] * np.array(init_sepals_len) + regression1["b"], color='red')
 plt.title("r = " + str(round(corelation1, 2)) + " y = " + str(round(regression1["a"], 1)) + "x + " + str(
     round(regression1["b"], 1)))
 plt.xlabel("Długość działki kielicha (cm)")
@@ -216,7 +216,7 @@ regression3 = formulas.linear_regression(init_sepals_len, init_petals_wid)
 
 plt.figure()
 plt.scatter(init_sepals_len, init_petals_wid, color='blue')
-plt.plot(np.array(init_sepals_len), regression3["a"] * np.array(init_sepals_len) + regression3["b"], color='red')
+plt.plot(init_sepals_len, regression3["a"] * np.array(init_sepals_len) + regression3["b"], color='red')
 plt.title("r = " + str(round(corelation3, 2)) + " y = " + str(round(regression3["a"], 1)) + "x + " + str(
     round(regression3["b"], 1)))
 plt.xlabel("Długość działki kielicha (cm)")
@@ -228,7 +228,7 @@ regression4 = formulas.linear_regression(init_sepals_wid, init_petals_len)
 
 plt.figure()
 plt.scatter(init_sepals_wid, init_petals_len, color='blue')
-plt.plot(np.array(init_sepals_wid), regression4["a"] * np.array(init_sepals_wid) + regression4["b"], color='red')
+plt.plot(init_sepals_wid, regression4["a"] * np.array(init_sepals_wid) + regression4["b"], color='red')
 plt.title("r = " + str(round(corelation4, 2)) + " y = " + str(round(regression4["a"], 1)) + "x + " + str(
     round(regression4["b"], 1)))
 plt.xlabel("Szerokość działki kielicha (cm)")
@@ -240,7 +240,7 @@ regression5 = formulas.linear_regression(init_sepals_wid, init_petals_wid)
 
 plt.figure()
 plt.scatter(init_sepals_wid, init_petals_wid, color='blue')
-plt.plot(np.array(init_sepals_wid), regression5["a"] * np.array(init_sepals_wid) + regression5["b"], color='red')
+plt.plot(init_sepals_wid, regression5["a"] * np.array(init_sepals_wid) + regression5["b"], color='red')
 plt.title("r = " + str(round(corelation5, 2)) + " y = " + str(round(regression5["a"], 1)) + "x + " + str(
     round(regression5["b"], 1)))
 plt.xlabel("Szerokość działki kielicha (cm)")
@@ -252,7 +252,7 @@ regression6 = formulas.linear_regression(init_petals_len, init_petals_wid)
 
 plt.figure()
 plt.scatter(init_petals_len, init_petals_wid, color='blue')
-plt.plot(np.array(init_petals_len), regression6["a"] * np.array(init_petals_len) + regression6["b"], color='red')
+plt.plot(init_petals_len, regression6["a"] * np.array(init_petals_len) + regression6["b"], color='red')
 plt.title("r = " + str(round(corelation6, 2)) + " y = " + str(round(regression6["a"], 1)) + "x + " + str(
     round(regression6["b"], 1)))
 plt.xlabel("Długość płatka (cm)")
