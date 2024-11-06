@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="usunięcie komentarza">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="removal of np arrays">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.formulas.executor": "Run",
-    "Python.main.executor": "Profiler",
+    "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -137,23 +137,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730850884019</updated>
     </task>
-    <task id="LOCAL-00011" summary="dodanie zaokrągleń i wypisywania procentów">
+    <task id="LOCAL-00011" summary="coma">
       <option name="closed" value="true" />
-      <created>1730852547410</created>
+      <created>1730853235971</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1730852547410</updated>
+      <updated>1730853235971</updated>
     </task>
-    <task id="LOCAL-00012" summary="usunięcie komentarza">
+    <task id="LOCAL-00012" summary="removal of np arrays">
       <option name="closed" value="true" />
-      <created>1730852644720</created>
+      <created>1730853403514</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1730852644720</updated>
+      <updated>1730853403515</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="removal of np arrays">
+      <option name="closed" value="true" />
+      <created>1730853560102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730853560102</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,12 +186,12 @@
     <MESSAGE value="saving to file, comments" />
     <MESSAGE value="bins brakceets size" />
     <MESSAGE value="merge" />
-    <MESSAGE value="dodanie zaokrągleń i wypisywania procentów" />
-    <MESSAGE value="usunięcie komentarza" />
-    <option name="LAST_COMMIT_MESSAGE" value="usunięcie komentarza" />
+    <MESSAGE value="coma" />
+    <MESSAGE value="removal of np arrays" />
+    <option name="LAST_COMMIT_MESSAGE" value="removal of np arrays" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1730852392270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1730840993455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas.coverage" NAME="formulas Coverage Results" MODIFIED="1730385249880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
