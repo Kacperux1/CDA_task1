@@ -30,10 +30,10 @@ irises = []
 with open("data1.csv") as data:
     reader = csv.reader(data)
     for line in reader:
-        sepal_length = line[0]
-        sepal_width = line[1]
-        petal_length = line[2]
-        petal_width = line[3]
+        sepal_length = float(line[0])
+        sepal_width = float(line[1])
+        petal_length = float(line[2])
+        petal_width = float(line[3])
         species = line[4]
         iris = Iris(sepal_length, sepal_width, petal_length, petal_width, species)
         irises.append(iris)
