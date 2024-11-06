@@ -102,7 +102,6 @@ results_table = [
 print(headings)
 for item in results_table:
     print(item)
-""""
 # punkt 2
 # rysowanie odpowiednio histogramów oraz wykresów pudełkowych
 plt.figure()
@@ -259,4 +258,3 @@ plt.title("r = " + str(round(corelation6, 2)) + " y = " + str(round(regression6[
 plt.xlabel("Długość płatka (cm)")
 plt.ylabel('Szerokość płatka (cm)')
 plt.savefig("regresja6.png", dpi=300)
-"""
