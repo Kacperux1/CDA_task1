@@ -72,7 +72,7 @@ init_sepals_wid = sepals_wid[:]
 init_petals_len = petals_len[:]
 init_petals_wid = petals_wid[:]
 # obliczenie i wypisanie wartosci w tabeli z punktu 1 (zaokrąglenie do 2 miejsc po przecinku)
-headings = ["Cecha", "Minimum", "Śr. arytm. (+- odch. stand.)", "Mediana (Q1 - Q3)" "Maksimum"]
+headings = ["Cecha", "Minimum", "Śr. arytm. (+- odch. stand.)", "Mediana (Q1 - Q3)", "Maksimum"]
 results_table = [
     ["Długość działki kielicha: ", "{:.2f}".format(formulas.find_min(sepals_len)),
      str("{:.2f}".format(round(formulas.arithmetic_average(sepals_len), 2))) + "(+-" + str(
