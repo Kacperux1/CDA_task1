@@ -1,5 +1,4 @@
 import csv
-from ipaddress import summarize_address_range
 
 import numpy as np
 
