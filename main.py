@@ -101,6 +101,7 @@ results_table = [
 print(headings)
 for item in results_table:
     print(item)
+
 # punkt 2
 # rysowanie odpowiednio histogramów oraz wykresów pudełkowych
 plt.figure()
