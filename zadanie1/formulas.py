@@ -14,11 +14,11 @@ def arithmetic_average(values):
 
 # funkcja obliczajaca wariancję
 def variance(values):
-    temp = 0
-    avg = arithmetic_average(values)
-    for value in values:
-        temp += (value - avg) ** 2
-    return temp / (len(values) -1)
+        temp = 0
+        avg = arithmetic_average(values)
+        for value in values:
+            temp += (value - avg) ** 2
+        return temp / (len(values) -1)
 
 #odchylenie standardowe z wariancji
 def standard_deviation(values):
