@@ -21,8 +21,8 @@ class Iris:
             self.species = "virginica"
 
     # reprezentacja klasy potzrebna do wczytywaja z pliku .csv
-    def __repr__(self):
-        return f"Iris(sepal_length={self.sepal_length}, sepal_width={self.sepal_width}, petal_length={self.petal_length}, petal_width={self.petal_width}, species={self.species}"
+    #def __repr__(self):
+     #   return f"Iris(sepal_length={self.sepal_length}, sepal_width={self.sepal_width}, petal_length={self.petal_length}, petal_width={self.petal_width}, species={self.species}"
 
 
 irises = []
@@ -74,27 +74,31 @@ init_petals_wid = petals_wid[:]
 headings = ["Cecha", "Minimum", "Śr. arytm. (+- odch. stand.)", "Mediana (Q1 - Q3)", "Maksimum"]
 results_table = [
     ["Długość działki kielicha: ", "{:.2f}".format(formulas.find_min(sepals_len)),
-     str("{:.2f}".format(round(formulas.arithmetic_average(sepals_len), 2))) + "(+-" + str(
-         "{:.2f}".format(round(formulas.standard_deviation(sepals_len), 2))) + ")",
-     str("{:.2f}".format(formulas.median(sepals_len))) + "(" + str("{:.2f}".format(formulas.Q1(sepals_len))) + " - " + str(
+     str("{:.2f}".format(formulas.arithmetic_average(sepals_len))) + "(+-" + str(
+         "{:.2f}".format(formulas.standard_deviation(sepals_len))) + ")",
+     str("{:.2f}".format(formulas.median(sepals_len))) + "(" + str("{:.2f}".format(
+         formulas.Q1(sepals_len))) + " - " + str(
          "{:.2f}".format(formulas.Q3(sepals_len))) + ")",
      "{:.2f}".format(formulas.find_max(sepals_len))],
     ["Szerokość działki kielicha: ", "{:.2f}".format(formulas.find_min(sepals_wid)),
      str("{:.2f}".format(round(formulas.arithmetic_average(sepals_wid), 2))) + "(+-" + str(
          "{:.2f}".format(round(formulas.standard_deviation(sepals_wid), 2))) + ")",
-     str("{:.2f}".format(formulas.median(sepals_wid))) + "(" + str("{:.2f}".format(formulas.Q1(sepals_wid))) + " - " + str(
+     str("{:.2f}".format(formulas.median(sepals_wid))) + "(" + str("{:.2f}".format(
+         formulas.Q1(sepals_wid))) + " - " + str(
          "{:.2f}".format(formulas.Q3(sepals_wid))) + ")",
      "{:.2f}".format(formulas.find_max(sepals_wid))],
     ["Długość płatka: ", "{:.2f}".format(formulas.find_min(petals_len)),
      str("{:.2f}".format(round(formulas.arithmetic_average(petals_len), 2))) + "(+-" + str(
          "{:.2f}".format(round(formulas.standard_deviation(petals_len), 2))) + ")",
-     str("{:.2f}".format(formulas.median(petals_len))) + "(" + str("{:.2f}".format(formulas.Q1(petals_len))) + " - " + str(
+     str("{:.2f}".format(formulas.median(petals_len))) + "(" + str("{:.2f}".format(
+         formulas.Q1(petals_len))) + " - " + str(
          "{:.2f}".format(formulas.Q3(petals_len))) + ")",
      "{:.2f}".format(formulas.find_max(petals_len))],
     ["Szerokość płatka: ", "{:.2f}".format(formulas.find_min(petals_wid)),
      str("{:.2f}".format(round(formulas.arithmetic_average(petals_wid), 2))) + "(+-" + str(
          "{:.2f}".format(round(formulas.standard_deviation(petals_wid), 2))) + ")",
-     str("{:.2f}".format(formulas.median(petals_wid))) + "(" + str("{:.2f}".format(formulas.Q1(petals_wid))) + " - " + str(
+     str("{:.2f}".format(formulas.median(petals_wid))) + "(" + str("{:.2f}".format(
+         formulas.Q1(petals_wid))) + " - " + str(
          "{:.2f}".format(formulas.Q3(petals_wid))) + ")",
      "{:.2f}".format(formulas.find_max(petals_wid))]
 ]
@@ -162,7 +166,7 @@ plt.savefig("pudelkowy_petal_length.png", dpi=300)
 
 plt.figure()
 plt.hist(petals_wid, bins=np.arange((np.floor(formulas.find_min(petals_wid) * 4) / 4),
-                     (np.ceil(formulas.find_max(petals_wid) * 4) / 4 + 0.25), 0.25), alpha=0.5,
+                                    (np.ceil(formulas.find_max(petals_wid) * 4) / 4 + 0.25), 0.25), alpha=0.5,
          label='Data 2', color='blue', edgecolor='black')
 plt.title('Szerokość płatka')
 plt.xlabel('Długość (cm)')
