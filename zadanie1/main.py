@@ -20,9 +20,9 @@ class Iris:
         else:
             self.species = "virginica"
 
-    # reprezentacja klasy potzrebna do wczytywaja z pliku .csv
-    #def __repr__(self):
-     #   return f"Iris(sepal_length={self.sepal_length}, sepal_width={self.sepal_width}, petal_length={self.petal_length}, petal_width={self.petal_width}, species={self.species}"
+    # reprezentacja tesktowa obiektu
+    def __repr__(self):
+        return f"Iris(sepal_length={self.sepal_length}, sepal_width={self.sepal_width}, petal_length={self.petal_length}, petal_width={self.petal_width}, species={self.species}"
 
 
 irises = []
@@ -30,10 +30,10 @@ irises = []
 with open("data1.csv") as data:
     reader = csv.reader(data)
     for line in reader:
-        sepal_length = float(line[0])
-        sepal_width = float(line[1])
-        petal_length = float(line[2])
-        petal_width = float(line[3])
+        sepal_length = line[0]
+        sepal_width = line[1]
+        petal_length = line[2]
+        petal_width = line[3]
         species = line[4]
         iris = Iris(sepal_length, sepal_width, petal_length, petal_width, species)
         irises.append(iris)
@@ -73,35 +73,31 @@ init_petals_wid = petals_wid[:]
 # obliczenie i wypisanie wartosci w tabeli z punktu 1 (zaokrąglenie do 2 miejsc po przecinku)
 headings = ["Cecha", "Minimum", "Śr. arytm. (+- odch. stand.)", "Mediana (Q1 - Q3)", "Maksimum"]
 results_table = [
-    ["Długość działki kielicha: ", "{:.2f}".format(formulas.find_min(sepals_len)),
-     str("{:.2f}".format(formulas.arithmetic_average(sepals_len))) + "(+-" + str(
-         "{:.2f}".format(formulas.standard_deviation(sepals_len))) + ")",
-     str("{:.2f}".format(formulas.median(sepals_len))) + "(" + str("{:.2f}".format(
-         formulas.Q1(sepals_len))) + " - " + str(
-         "{:.2f}".format(formulas.Q3(sepals_len))) + ")",
-     "{:.2f}".format(formulas.find_max(sepals_len))],
-    ["Szerokość działki kielicha: ", "{:.2f}".format(formulas.find_min(sepals_wid)),
-     str("{:.2f}".format(round(formulas.arithmetic_average(sepals_wid), 2))) + "(+-" + str(
-         "{:.2f}".format(round(formulas.standard_deviation(sepals_wid), 2))) + ")",
-     str("{:.2f}".format(formulas.median(sepals_wid))) + "(" + str("{:.2f}".format(
-         formulas.Q1(sepals_wid))) + " - " + str(
-         "{:.2f}".format(formulas.Q3(sepals_wid))) + ")",
-     "{:.2f}".format(formulas.find_max(sepals_wid))],
-    ["Długość płatka: ", "{:.2f}".format(formulas.find_min(petals_len)),
-     str("{:.2f}".format(round(formulas.arithmetic_average(petals_len), 2))) + "(+-" + str(
-         "{:.2f}".format(round(formulas.standard_deviation(petals_len), 2))) + ")",
-     str("{:.2f}".format(formulas.median(petals_len))) + "(" + str("{:.2f}".format(
-         formulas.Q1(petals_len))) + " - " + str(
-         "{:.2f}".format(formulas.Q3(petals_len))) + ")",
-     "{:.2f}".format(formulas.find_max(petals_len))],
-    ["Szerokość płatka: ", "{:.2f}".format(formulas.find_min(petals_wid)),
-     str("{:.2f}".format(round(formulas.arithmetic_average(petals_wid), 2))) + "(+-" + str(
-         "{:.2f}".format(round(formulas.standard_deviation(petals_wid), 2))) + ")",
-     str("{:.2f}".format(formulas.median(petals_wid))) + "(" + str("{:.2f}".format(
-         formulas.Q1(petals_wid))) + " - " + str(
-         "{:.2f}".format(formulas.Q3(petals_wid))) + ")",
-     "{:.2f}".format(formulas.find_max(petals_wid))]
+    ["Długość działki kielicha: ",
+     f"{formulas.find_min(sepals_len):.2f}",
+     f"{formulas.arithmetic_average(sepals_len):.2f}(+-{formulas.standard_deviation(sepals_len):.2f})",
+     f"{formulas.median(sepals_len):.2f}({formulas.Q1(sepals_len):.2f} - {formulas.Q3(sepals_len):.2f})",
+     f"{formulas.find_max(sepals_len):.2f}"],
+
+    ["Szerokość działki kielicha: ",
+     f"{formulas.find_min(sepals_wid):.2f}",
+     f"{formulas.arithmetic_average(sepals_wid):.2f}(+-{formulas.standard_deviation(sepals_wid):.2f})",
+     f"{formulas.median(sepals_wid):.2f}({formulas.Q1(sepals_wid):.2f} - {formulas.Q3(sepals_wid):.2f})",
+     f"{formulas.find_max(sepals_wid):.2f}"],
+
+    ["Długość płatka: ",
+     f"{formulas.find_min(petals_len):.2f}",
+     f"{formulas.arithmetic_average(petals_len):.2f}(+-{formulas.standard_deviation(petals_len):.2f})",
+     f"{formulas.median(petals_len):.2f}({formulas.Q1(petals_len):.2f} - {formulas.Q3(petals_len):.2f})",
+     f"{formulas.find_max(petals_len):.2f}"],
+
+    ["Szerokość płatka: ",
+     f"{formulas.find_min(petals_wid):.2f}",
+     f"{formulas.arithmetic_average(petals_wid):.2f}(+-{formulas.standard_deviation(petals_wid):.2f})",
+     f"{formulas.median(petals_wid):.2f}({formulas.Q1(petals_wid):.2f} - {formulas.Q3(petals_wid):.2f})",
+     f"{formulas.find_max(petals_wid):.2f}"]
 ]
+
 print(headings)
 for item in results_table:
     print(item)
@@ -110,7 +106,7 @@ for item in results_table:
 plt.figure()
 plt.hist(sepals_len, bins=np.arange((np.floor(formulas.find_min(sepals_len) * 2) / 2),
                                     (np.ceil(formulas.find_max(sepals_len) * 2) / 2 + 0.5), 0.5), alpha=0.5,
-         label='Data 2', color='blue', edgecolor='black', align='mid')
+         color='blue', edgecolor='black', align='mid')
 plt.title('Długość działki kielicha')
 plt.xticks(np.arange((np.floor(formulas.find_min(sepals_len) * 2) / 2),
                      (np.ceil(formulas.find_max(sepals_len) * 2) / 2 + 0.5), 0.5))
@@ -129,7 +125,7 @@ plt.savefig("pudelkowy_sepal_len.png", dpi=300)
 plt.figure()
 plt.hist(sepals_wid, bins=np.arange((np.floor(formulas.find_min(sepals_wid) * 4) / 4),
                                     (np.ceil(formulas.find_max(sepals_wid) * 4) / 4 + 0.25), 0.25), alpha=0.5,
-         label='Data 2', color='blue', edgecolor='black')
+         color='blue', edgecolor='black')
 plt.title('Szerokość działki kielicha')
 plt.xlabel('Długość (cm)')
 plt.ylabel('Liczebność')
@@ -148,7 +144,7 @@ plt.savefig("pudelkowy_sepal_width.png", dpi=300)
 plt.figure()
 plt.hist(petals_len, bins=np.arange((np.floor(formulas.find_min(petals_len) * 2) / 2),
                                     (np.ceil(formulas.find_max(petals_len) * 2) / 2 + 0.5), 0.5), alpha=0.5,
-         label='Data 2', color='blue', edgecolor='black')
+         color='blue', edgecolor='black')
 plt.title('Długość płatka')
 plt.xticks(np.arange((np.floor(formulas.find_min(petals_len) * 2) / 2),
                      (np.ceil(formulas.find_max(petals_len) * 2) / 2 + 0.5), 0.5))
@@ -167,7 +163,7 @@ plt.savefig("pudelkowy_petal_length.png", dpi=300)
 plt.figure()
 plt.hist(petals_wid, bins=np.arange((np.floor(formulas.find_min(petals_wid) * 4) / 4),
                                     (np.ceil(formulas.find_max(petals_wid) * 4) / 4 + 0.25), 0.25), alpha=0.5,
-         label='Data 2', color='blue', edgecolor='black')
+        color='blue', edgecolor='black')
 plt.title('Szerokość płatka')
 plt.xlabel('Długość (cm)')
 plt.ylabel('Liczebność')

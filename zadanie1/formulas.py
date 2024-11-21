@@ -1,5 +1,6 @@
 from math import sqrt
-from statistics import variance
+import numpy as np
+
 
 # Autorzy - Kacper Maziarz 251586, Jędrzej Bartoszewski 251482
 
@@ -52,9 +53,9 @@ def find_min(values):
 def median(values):
     values.sort()
     if len(values) % 2 == 0:
-        return (values[round(len(values) / 2) - 1] + values[round(len(values) / 2)]) / 2
+        return (values[len(values) // 2 - 1] + values[len(values) // 2 ] ) / 2
     else:
-        return values[(round(len(values) / 2)) - 1]
+        return values[(np.ceil(len(values) / 2)) - 1]
 
 #obliczanie pierwszego kwartyla
 def Q1(values):
