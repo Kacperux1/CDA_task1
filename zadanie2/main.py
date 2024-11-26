@@ -1,6 +1,7 @@
 import csv
-
+from sklearn.cluster import KMeans
 import formulas2
+import numpy as np
 
 # deklaracja klasy Iris, ktora jest wykorzystywana do wczytania pliku oraz do wyliczania wartosci w punkcie 1
 class Iris:
@@ -56,3 +57,14 @@ print(sepals_len_normalized)
 print(sepals_wid_normalized)
 print(petals_len_normalized)
 print(petals_wid_normalized)
+
+normalized_values = []
+
+for i in range(len(sepals_len_normalized)):
+    normalized_values.append([sepals_len_normalized[i], sepals_wid_normalized[i], petals_len_normalized[i], petals_wid_normalized[i]])
+
+print("")
+print(normalized_values)
+
+X = np.array(normalized_values)
+wynik = KMeans(n_clusters=2, random_state=0, n_init="auto").fit(X)
