@@ -1,5 +1,7 @@
 import csv
 
+import formulas2
+
 # deklaracja klasy Iris, ktora jest wykorzystywana do wczytania pliku oraz do wyliczania wartosci w punkcie 1
 class Iris:
     def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
@@ -34,7 +36,23 @@ for iris in irises:
     petals_len.append(iris.petal_length)
     petals_wid.append(iris.petal_width)
 
+sepals_len_normalized = sepals_len[:]
+sepals_wid_normalized = sepals_wid[:]
+petals_len_normalized = petals_len[:]
+petals_wid_normalized = petals_wid[:]
+formulas2.normalization(sepals_len_normalized)
+formulas2.normalization(sepals_wid_normalized)
+formulas2.normalization(petals_len_normalized)
+formulas2.normalization(petals_wid_normalized)
+
 print(sepals_len)
 print(sepals_wid)
 print(petals_len)
 print(petals_wid)
+
+print("")
+
+print(sepals_len_normalized)
+print(sepals_wid_normalized)
+print(petals_len_normalized)
+print(petals_wid_normalized)
