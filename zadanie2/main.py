@@ -2,6 +2,8 @@ import csv
 from sklearn.cluster import KMeans
 import formulas2
 import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
 
 # deklaracja klasy Iris, ktora jest wykorzystywana do wczytania pliku oraz do wyliczania wartosci w punkcie 1
 class Iris:
@@ -10,7 +12,6 @@ class Iris:
         self.sepal_width = float(sepal_width)
         self.petal_length = float(petal_length)
         self.petal_width = float(petal_width)
-
 
 irises = []
 # wczytanie z pliku, z separacja
@@ -37,6 +38,13 @@ for iris in irises:
     petals_len.append(iris.petal_length)
     petals_wid.append(iris.petal_width)
 
+data = {
+    "sepal_len": sepals_len,
+    "sepal_wid": sepals_wid,
+    "petal_len": petals_len,
+    "petal_wid": petals_wid,
+}
+
 sepals_len_normalized = sepals_len[:]
 sepals_wid_normalized = sepals_wid[:]
 petals_len_normalized = petals_len[:]
@@ -46,25 +54,33 @@ formulas2.normalization(sepals_wid_normalized)
 formulas2.normalization(petals_len_normalized)
 formulas2.normalization(petals_wid_normalized)
 
-print(sepals_len)
-print(sepals_wid)
-print(petals_len)
-print(petals_wid)
+data_nor = {
+    "sepal_len_nor": sepals_len_normalized,
+    "sepal_wid_nor": sepals_wid_normalized,
+    "petal_len_nor": petals_len_normalized,
+    "petal_wid_nor": petals_wid_normalized,
+}
 
-print("")
-
-print(sepals_len_normalized)
-print(sepals_wid_normalized)
-print(petals_len_normalized)
-print(petals_wid_normalized)
-
-normalized_values = []
-
+data_nor_arr = []
 for i in range(len(sepals_len_normalized)):
-    normalized_values.append([sepals_len_normalized[i], sepals_wid_normalized[i], petals_len_normalized[i], petals_wid_normalized[i]])
+    data_nor_arr.append([sepals_len_normalized[i], sepals_wid_normalized[i], petals_len_normalized[i], petals_wid_normalized[i]])
 
-print("")
-print(normalized_values)
+wynik = KMeans(n_clusters=3, n_init=10).fit(data_nor_arr)
 
-X = np.array(normalized_values)
-wynik = KMeans(n_clusters=2, random_state=0, n_init="auto").fit(X)
+data["group"] = wynik.labels_
+data_nor["group"] = wynik.labels_
+
+effect = pd.DataFrame(data)
+effect_nor = pd.DataFrame(data_nor)
+
+print(effect)
+print(effect_nor)
+
+group0 = effect_nor[effect_nor.group == 0]
+group1 = effect_nor[effect_nor.group == 1]
+group2 = effect_nor[effect_nor.group == 2]
+
+plt.scatter(group0.sepal_len_nor, group0.sepal_wid_nor, color='blue')
+plt.scatter(group1.sepal_len_nor, group1.sepal_wid_nor, color='red')
+plt.scatter(group2.sepal_len_nor, group2.sepal_wid_nor, color='green')
+plt.show()

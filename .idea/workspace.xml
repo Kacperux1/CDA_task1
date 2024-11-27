@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="dodanie normalizacji danych">
+    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="dodanie bilbioteki i wstępne k-means">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zadanie2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/zadanie2/main.py" afterDir="false" />
     </list>
@@ -86,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729774795959</updated>
       <workItem from="1731937608859" duration="88000" />
-      <workItem from="1732041049269" duration="24059000" />
+      <workItem from="1732041049269" duration="34463000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -240,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732658555169</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="dodanie bilbioteki i wstępne k-means">
+      <option name="closed" value="true" />
+      <created>1732660490815</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1732660490815</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,10 +282,11 @@
     <MESSAGE value="merge" />
     <MESSAGE value="wczytywanie danych" />
     <MESSAGE value="dodanie normalizacji danych" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodanie normalizacji danych" />
+    <MESSAGE value="dodanie bilbioteki i wstępne k-means" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie bilbioteki i wstępne k-means" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1732659650499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
+    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1732741027086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas2.coverage" NAME="formulas2 Coverage Results" MODIFIED="1732658506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas.coverage" NAME="formulas Coverage Results" MODIFIED="1730385249880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
