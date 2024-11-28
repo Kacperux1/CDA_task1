@@ -85,40 +85,92 @@ group0 = effect_nor[effect_nor.group == 0]
 group1 = effect_nor[effect_nor.group == 1]
 group2 = effect_nor[effect_nor.group == 2]
 """
-
+#kopiowanie danych do nowej tablicy aby móc je znormalizoać jednoczesnie zachowujac dane wejsciowe
 init_data_nor = init_data[:]
+
+#Normalizujemy dane za pomoca metody MinMax {sepal_len[i] - min(selap_len)/(max(sepal_len) - min(sepal_len))}
 scaler = MinMaxScaler()
-
-print(init_data_nor)
-
 scaler.fit(init_data_nor)
 init_data_nor = scaler.transform(init_data_nor)
 
-print(init_data_nor)
+wcss=[]
+iteracje=[]
+
+for i in range(2,11):
+    result = KMeans(n_clusters=i, n_init=10).fit(init_data_nor)
+    wcss.append(result.inertia_)
+    iteracje.append(result.n_iter_)
+
+plt.plot(range(2,11),wcss, color="black")
+plt.title('WCSS vs. Liczba klastrów')
+plt.xlabel('Liczba klastrów')
+plt.ylabel('WCSS')
+plt.grid()
+plt.show()
+
+print(wcss)
+print("")
+print(iteracje)
+
 
 wynik = KMeans(n_clusters=3, n_init=10).fit(init_data_nor)
 init_data["group"] = wynik.labels_
-print("")
-print(wynik.cluster_centers_)
 
 wynik.cluster_centers_[:,0] = (wynik.cluster_centers_[:,0]*(max(init_data["sepal_length"])-min(init_data["sepal_length"]))+min(init_data["sepal_length"]))
 wynik.cluster_centers_[:,1] = (wynik.cluster_centers_[:,1]*(max(init_data["sepal_width"])-min(init_data["sepal_width"]))+min(init_data["sepal_width"]))
 wynik.cluster_centers_[:,2] = (wynik.cluster_centers_[:,2]*(max(init_data["petal_length"])-min(init_data["petal_length"]))+min(init_data["petal_length"]))
 wynik.cluster_centers_[:,3] = (wynik.cluster_centers_[:,3]*(max(init_data["petal_width"])-min(init_data["petal_width"]))+min(init_data["petal_width"]))
 
-print("")
-print(wynik.cluster_centers_)
-
 group0 = init_data[init_data.group == 0]
 group1 = init_data[init_data.group == 1]
 group2 = init_data[init_data.group == 2]
+
+plt.scatter(group0.sepal_length, group0.sepal_width, marker='o',facecolors='none', edgecolors='black')
+plt.scatter(group1.sepal_length, group1.sepal_width, marker='o',facecolors='none', edgecolors='black')
+plt.scatter(group2.sepal_length, group2.sepal_width, marker='o',facecolors='none', edgecolors='black')
+#plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[0,0], wynik.cluster_centers_[0,1], color='orange', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[1,0], wynik.cluster_centers_[1,1], color='red', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[2,0], wynik.cluster_centers_[2,1], color='green', marker='*', s=200)
+plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
+plt.xlabel('dłogosc dzialki kielicha')
+plt.ylabel('szerokosc dzialki kielicha')
+plt.show()
+
+plt.scatter(group0.sepal_length, group0.sepal_width, color='black')
+plt.scatter(group1.sepal_length, group1.sepal_width, color='black')
+plt.scatter(group2.sepal_length, group2.sepal_width, color='black')
+#plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[0,0], wynik.cluster_centers_[0,1], color='orange', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[1,0], wynik.cluster_centers_[1,1], color='red', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[2,0], wynik.cluster_centers_[2,1], color='green', marker='*', s=200)
+plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
+plt.xlabel('dłogosc dzialki kielicha')
+plt.ylabel('szerokosc dzialki kielicha')
+plt.show()
+
+plt.scatter(group0.sepal_length, group0.sepal_width, marker='o',facecolors='none', edgecolors='orange')
+plt.scatter(group1.sepal_length, group1.sepal_width, marker='o',facecolors='none', edgecolors='red')
+plt.scatter(group2.sepal_length, group2.sepal_width, marker='o',facecolors='none', edgecolors='green')
+#plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[0,0], wynik.cluster_centers_[0,1], color='orange', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[1,0], wynik.cluster_centers_[1,1], color='red', marker='*', s=200)
+plt.scatter(wynik.cluster_centers_[2,0], wynik.cluster_centers_[2,1], color='green', marker='*', s=200)
+plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
+plt.xlabel('dłogosc dzialki kielicha')
+plt.ylabel('szerokosc dzialki kielicha')
+plt.show()
 
 plt.scatter(group0.sepal_length, group0.sepal_width, color='orange')
 plt.scatter(group1.sepal_length, group1.sepal_width, color='red')
 plt.scatter(group2.sepal_length, group2.sepal_width, color='green')
 plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
+plt.xlabel('dłogosc dzialki kielicha')
+plt.ylabel('szerokosc dzialki kielicha')
 plt.show()
 
+"""
 plt.scatter(group0.sepal_length, group0.petal_length, color='orange')
 plt.scatter(group1.sepal_length, group1.petal_length, color='red')
 plt.scatter(group2.sepal_length, group2.petal_length, color='green')
@@ -148,3 +200,4 @@ plt.scatter(group1.petal_length, group1.petal_width, color='red')
 plt.scatter(group2.petal_length, group2.petal_width, color='green')
 plt.scatter(wynik.cluster_centers_[:,2], wynik.cluster_centers_[:,3], color='black', marker='*', s=200)
 plt.show()
+"""
