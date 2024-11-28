@@ -13,6 +13,9 @@ class Iris:
         self.petal_length = float(petal_length)
         self.petal_width = float(petal_width)
 
+init_data = pd.read_csv("data2test.csv")
+
+"""
 irises = []
 # wczytanie z pliku, z separacja
 with open("data2.csv") as data:
@@ -79,8 +82,16 @@ print(effect_nor)
 group0 = effect_nor[effect_nor.group == 0]
 group1 = effect_nor[effect_nor.group == 1]
 group2 = effect_nor[effect_nor.group == 2]
+"""
 
-plt.scatter(group0.sepal_len_nor, group0.sepal_wid_nor, color='blue')
-plt.scatter(group1.sepal_len_nor, group1.sepal_wid_nor, color='red')
-plt.scatter(group2.sepal_len_nor, group2.sepal_wid_nor, color='green')
+wynik = KMeans(n_clusters=3, n_init=10).fit(init_data)
+init_data["group"] = wynik.labels_
+
+group0 = init_data[init_data.group == 0]
+group1 = init_data[init_data.group == 1]
+group2 = init_data[init_data.group == 2]
+
+plt.scatter(group0.sepal_length, group0.sepal_width, color='blue')
+plt.scatter(group1.sepal_length, group1.sepal_width, color='red')
+plt.scatter(group2.sepal_length, group2.sepal_width, color='green')
 plt.show()
