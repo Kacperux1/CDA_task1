@@ -1,5 +1,7 @@
 import csv
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import MinMaxScaler
+
 import formulas2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -84,14 +86,65 @@ group1 = effect_nor[effect_nor.group == 1]
 group2 = effect_nor[effect_nor.group == 2]
 """
 
-wynik = KMeans(n_clusters=3, n_init=10).fit(init_data)
+init_data_nor = init_data[:]
+scaler = MinMaxScaler()
+
+print(init_data_nor)
+
+scaler.fit(init_data_nor)
+init_data_nor = scaler.transform(init_data_nor)
+
+print(init_data_nor)
+
+wynik = KMeans(n_clusters=3, n_init=10).fit(init_data_nor)
 init_data["group"] = wynik.labels_
+print("")
+print(wynik.cluster_centers_)
+
+wynik.cluster_centers_[:,0] = (wynik.cluster_centers_[:,0]*(max(init_data["sepal_length"])-min(init_data["sepal_length"]))+min(init_data["sepal_length"]))
+wynik.cluster_centers_[:,1] = (wynik.cluster_centers_[:,1]*(max(init_data["sepal_width"])-min(init_data["sepal_width"]))+min(init_data["sepal_width"]))
+wynik.cluster_centers_[:,2] = (wynik.cluster_centers_[:,2]*(max(init_data["petal_length"])-min(init_data["petal_length"]))+min(init_data["petal_length"]))
+wynik.cluster_centers_[:,3] = (wynik.cluster_centers_[:,3]*(max(init_data["petal_width"])-min(init_data["petal_width"]))+min(init_data["petal_width"]))
+
+print("")
+print(wynik.cluster_centers_)
 
 group0 = init_data[init_data.group == 0]
 group1 = init_data[init_data.group == 1]
 group2 = init_data[init_data.group == 2]
 
-plt.scatter(group0.sepal_length, group0.sepal_width, color='blue')
+plt.scatter(group0.sepal_length, group0.sepal_width, color='orange')
 plt.scatter(group1.sepal_length, group1.sepal_width, color='red')
 plt.scatter(group2.sepal_length, group2.sepal_width, color='green')
+plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.show()
+
+plt.scatter(group0.sepal_length, group0.petal_length, color='orange')
+plt.scatter(group1.sepal_length, group1.petal_length, color='red')
+plt.scatter(group2.sepal_length, group2.petal_length, color='green')
+plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,2], color='black', marker='*', s=200)
+plt.show()
+
+plt.scatter(group0.sepal_length, group0.petal_width, color='orange')
+plt.scatter(group1.sepal_length, group1.petal_width, color='red')
+plt.scatter(group2.sepal_length, group2.petal_width, color='green')
+plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,3], color='black', marker='*', s=200)
+plt.show()
+
+plt.scatter(group0.sepal_width, group0.petal_length, color='orange')
+plt.scatter(group1.sepal_width, group1.petal_length, color='red')
+plt.scatter(group2.sepal_width, group2.petal_length, color='green')
+plt.scatter(wynik.cluster_centers_[:,1], wynik.cluster_centers_[:,2], color='black', marker='*', s=200)
+plt.show()
+
+plt.scatter(group0.sepal_width, group0.petal_width, color='orange')
+plt.scatter(group1.sepal_width, group1.petal_width, color='red')
+plt.scatter(group2.sepal_width, group2.petal_width, color='green')
+plt.scatter(wynik.cluster_centers_[:,1], wynik.cluster_centers_[:,3], color='black', marker='*', s=200)
+plt.show()
+
+plt.scatter(group0.petal_length, group0.petal_width, color='orange')
+plt.scatter(group1.petal_length, group1.petal_width, color='red')
+plt.scatter(group2.petal_length, group2.petal_width, color='green')
+plt.scatter(wynik.cluster_centers_[:,2], wynik.cluster_centers_[:,3], color='black', marker='*', s=200)
 plt.show()
