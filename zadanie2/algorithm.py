@@ -12,18 +12,18 @@ class CustomKMeansResult:
         self.iteration_number = iteration_number
         self.wcss = wcss
 
-    ## self.
+
 
 
 def CustomKMeans(cluster_number, values, tolerance):
     results = []
-    wcssList = []
 
+    #algorytm jest powtarzany wielokrotnie w celu uzyskania dokładniejszych wynikow
     for repeat in range(10):
         clusters = [0] * len(values)
         iterations = 1
         finished = False
-
+        #poczatkowe centra i deklaracja zmiennej dla nowychc centrow
         new_centers = []
         centers = [random.choice(values) for i in range(cluster_number)]
 
@@ -34,14 +34,16 @@ def CustomKMeans(cluster_number, values, tolerance):
                 clusters[i] = distances.index(min(distances))
 
             new_centers = []
-
+            #dodawanie /ustalanie nowych centrow
             for i in range(len(centers)):
+                #tymczasowe ustalenie punktow dla poszczegolnego klastra
                 cluster_points = [values[j] for j in range(len(values)) if clusters[j] == i]
                 if cluster_points:
+                    #mean w numpy zwraca nd array, axis = 0 oznacza ze sumujemy po kolumnach (1 po wierszach)
                     new_centers.append(list(mean(cluster_points, axis=0)))
                 else:
                     new_centers.append(centers[i])
-
+            #sprawdzenie warunku stopu
             if all(euclidean_distance(centers[i], new_centers[i]) < tolerance for i in range(len(centers))):
                 finished = True
             else:
@@ -56,7 +58,7 @@ def CustomKMeans(cluster_number, values, tolerance):
         if obj.wcss == minWCSS:
             return obj
 
-
+#funkcja obliczajaca odleglosc euklidesowa dla dowolnego wymiaru
 def euclidean_distance(value1, value2):
     temp = 0
     if len(value1) != len(value2):
@@ -65,7 +67,7 @@ def euclidean_distance(value1, value2):
         temp += (value1[i] - value2[i]) ** 2
     return sqrt(temp)
 
-
+#funckja obliczajaca wcss dla wszystkich klastrow
 def wcss_calculate(values, clusters, centers):
     result = 0
     for i in range(len(centers)):
