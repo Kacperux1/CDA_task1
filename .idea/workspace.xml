@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="grupowanie przestrzeni 4D działa i drukuje 6 poprawnych wykresów">
+    <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="dodanie wykresu pokazującego wcss w zależnosci od liczby klastrów, testy kolorow, generalnie wszystko gotowe na 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zadanie2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/zadanie2/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,8 @@
       <option name="presentableId" value="Default" />
       <updated>1729774795959</updated>
       <workItem from="1731937608859" duration="88000" />
-      <workItem from="1732041049269" duration="41794000" />
+      <workItem from="1732041049269" duration="43693000" />
+      <workItem from="1733251741056" duration="3588000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -272,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732793922245</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="dodanie wykresu pokazującego wcss w zależnosci od liczby klastrów, testy kolorow, generalnie wszystko gotowe na 4">
+      <option name="closed" value="true" />
+      <created>1732796868591</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1732796868591</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,10 +318,11 @@
     <MESSAGE value="klastrowanie dział ale dziwnie i raczej nie jest to jeszcze poprawne, wyswietla sie wykres punktowy ale widac na nim te niedoskonalosci" />
     <MESSAGE value="data2test i inna metoda odczytu testowana" />
     <MESSAGE value="grupowanie przestrzeni 4D działa i drukuje 6 poprawnych wykresów" />
-    <option name="LAST_COMMIT_MESSAGE" value="grupowanie przestrzeni 4D działa i drukuje 6 poprawnych wykresów" />
+    <MESSAGE value="dodanie wykresu pokazującego wcss w zależnosci od liczby klastrów, testy kolorow, generalnie wszystko gotowe na 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie wykresu pokazującego wcss w zależnosci od liczby klastrów, testy kolorow, generalnie wszystko gotowe na 4" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1732796470428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
+    <SUITE FILE_PATH="coverage/CDA_task1$main.coverage" NAME="main Coverage Results" MODIFIED="1733262759494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas2.coverage" NAME="formulas2 Coverage Results" MODIFIED="1732658506003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zadanie2" />
     <SUITE FILE_PATH="coverage/CDA_task1$formulas.coverage" NAME="formulas Coverage Results" MODIFIED="1730385249880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
