@@ -67,6 +67,7 @@ group0 = init_data[init_data.group == 0]
 group1 = init_data[init_data.group == 1]
 group2 = init_data[init_data.group == 2]
 
+"""
 plt.scatter(group0.sepal_length, group0.sepal_width, marker='o', facecolors='none', edgecolors='black')
 plt.scatter(group1.sepal_length, group1.sepal_width, marker='o', facecolors='none', edgecolors='black')
 plt.scatter(group2.sepal_length, group2.sepal_width, marker='o', facecolors='none', edgecolors='black')
@@ -90,11 +91,11 @@ plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
 plt.xlabel('dłogosc dzialki kielicha')
 plt.ylabel('szerokosc dzialki kielicha')
 plt.show()
+"""
 
-plt.scatter(group0.sepal_length, group0.sepal_width, marker='o', facecolors='none', edgecolors='orange')
-plt.scatter(group1.sepal_length, group1.sepal_width, marker='o', facecolors='none', edgecolors='red')
-plt.scatter(group2.sepal_length, group2.sepal_width, marker='o', facecolors='none', edgecolors='green')
-# plt.scatter(wynik.cluster_centers_[:,0], wynik.cluster_centers_[:,1], color='black', marker='*', s=200)
+plt.scatter(group0.sepal_length, group0.sepal_width, marker='o', facecolors='none', edgecolors='orange', s=50)
+plt.scatter(group1.sepal_length, group1.sepal_width, marker='o', facecolors='none', edgecolors='red', s=50)
+plt.scatter(group2.sepal_length, group2.sepal_width, marker='o', facecolors='none', edgecolors='green', s=50)
 plt.scatter(wynik.cluster_centers_[0, 0], wynik.cluster_centers_[0, 1], color='orange', marker='*', s=200)
 plt.scatter(wynik.cluster_centers_[1, 0], wynik.cluster_centers_[1, 1], color='red', marker='*', s=200)
 plt.scatter(wynik.cluster_centers_[2, 0], wynik.cluster_centers_[2, 1], color='green', marker='*', s=200)
@@ -103,6 +104,7 @@ plt.xlabel('dłogosc dzialki kielicha')
 plt.ylabel('szerokosc dzialki kielicha')
 plt.show()
 
+"""
 plt.scatter(group0.sepal_length, group0.sepal_width, color='orange')
 plt.scatter(group1.sepal_length, group1.sepal_width, color='red')
 plt.scatter(group2.sepal_length, group2.sepal_width, color='green')
@@ -111,7 +113,6 @@ plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
 plt.xlabel('dłogosc dzialki kielicha')
 plt.ylabel('szerokosc dzialki kielicha')
 plt.show()
-
 
 plt.scatter(group0.sepal_length, group0.petal_length, color='orange')
 plt.scatter(group1.sepal_length, group1.petal_length, color='red')
@@ -142,4 +143,4 @@ plt.scatter(group1.petal_length, group1.petal_width, color='red')
 plt.scatter(group2.petal_length, group2.petal_width, color='green')
 plt.scatter(wynik.cluster_centers_[:,2], wynik.cluster_centers_[:,3], color='black', marker='*', s=200)
 plt.show()
-
+"""
