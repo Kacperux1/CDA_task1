@@ -50,10 +50,7 @@ group0 = init_data[init_data.group == 0]
 group1 = init_data[init_data.group == 1]
 group2 = init_data[init_data.group == 2]
 
-
 centers = np.array(result.centers)
-
-
 
 centers[:, 0] = (
            centers[:, 0] * (max(init_data["sepal_length"]) - min(init_data["sepal_length"])) + min(
@@ -68,53 +65,69 @@ centers[:, 3] = (
             centers[:, 3] * (max(init_data["petal_width"]) - min(init_data["petal_width"])) + min(
         init_data["petal_width"]))
 
+plt.scatter(group0.sepal_length, group0.sepal_width, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.sepal_length, group1.sepal_width, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.sepal_length, group2.sepal_width, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0, 0],centers[0, 1], color='orange', marker='*', s=200)
+plt.scatter(centers[1, 0],centers[1, 1], color='red', marker='*', s=200)
+plt.scatter(centers[2, 0],centers[2, 1], color='green', marker='*', s=200)
+plt.title('dłogość działki kielicha a szerokość działki kielicha')
+plt.xlabel('dłogość dzialki kielicha')
+plt.ylabel('szerokość dzialki kielicha')
+plt.show()#
 
-plt.scatter(group0.sepal_length, group0.sepal_width, marker='o', facecolors='none', edgecolors='orange',)
-plt.scatter(group1.sepal_length, group1.sepal_width, marker='o', facecolors='none', edgecolors='red')
-plt.scatter(group2.sepal_length, group2.sepal_width, marker='o', facecolors='none', edgecolors='green')
-plt.scatter([center[0] for center in centers], [center[1] for center in centers], color='black', marker='*', s=200)
-plt.title('Długość działki kielicha a szerokość działki kielicha')
-plt.xlabel('Długość działki kielicha')
-plt.ylabel('Szerokość działki kielicha')
+plt.scatter(group0.sepal_length, group0.petal_length, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.sepal_length, group1.petal_length, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.sepal_length, group2.petal_length, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0,0], centers[0,2], color='orange', marker='*', s=200)
+plt.scatter(centers[1,0], centers[1,2], color='red', marker='*', s=200)
+plt.scatter(centers[2,0], centers[2,2], color='green', marker='*', s=200)
+plt.title('dłogość dzialki kielicha a długość płatka')
+plt.xlabel('dłogość dzialki kielicha')
+plt.ylabel('długość płatka')
+plt.show()#
+
+plt.scatter(group0.sepal_length, group0.petal_width, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.sepal_length, group1.petal_width, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.sepal_length, group2.petal_width, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0,0], centers[0,3], color='orange', marker='*', s=200)
+plt.scatter(centers[1,0], centers[1,3], color='red', marker='*', s=200)
+plt.scatter(centers[2,0], centers[2,3], color='green', marker='*', s=200)
+plt.title('dłogość działki kielicha a szerokość płatka')
+plt.xlabel('dłogość dzialki kielicha')
+plt.ylabel('szerokość płatka')
+plt.show()#
+
+plt.scatter(group0.sepal_width, group0.petal_length, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.sepal_width, group1.petal_length, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.sepal_width, group2.petal_length, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0,1], centers[0,2], color='orange', marker='*', s=200)
+plt.scatter(centers[1,1], centers[1,2], color='red', marker='*', s=200)
+plt.scatter(centers[2,1], centers[2,2], color='green', marker='*', s=200)
+plt.title('szerokość działki kielicha a długość płatka')
+plt.xlabel('szerokość działki kielicha')
+plt.ylabel('długość płatka')
+plt.show()#
+
+plt.scatter(group0.sepal_width, group0.petal_width, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.sepal_width, group1.petal_width, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.sepal_width, group2.petal_width, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0,1], centers[0,3], color='orange', marker='*', s=200)
+plt.scatter(centers[1,1], centers[1,3], color='red', marker='*', s=200)
+plt.scatter(centers[2,1], centers[2,3], color='green', marker='*', s=200)
+plt.title('szerokość działki kielicha a szerokość płatka')
+plt.xlabel('szerokość działki kielicha')
+plt.ylabel('szerokość płatka')
 plt.show()
 
-plt.scatter(group0.sepal_length, group0.sepal_width, color='orange')
-plt.scatter(group1.sepal_length, group1.sepal_width, color='red')
-plt.scatter(group2.sepal_length, group2.sepal_width, color='green')
-plt.scatter(centers[:, 0],centers[:, 1], color='black', marker='*', s=200)
-plt.title('dłogosc dzialki kielicha a szerokosc dzialki kielicha')
-plt.xlabel('dłogosc dzialki kielicha')
-plt.ylabel('szerokosc dzialki kielicha')
-plt.show()
-
-
-plt.scatter(group0.sepal_length, group0.petal_length, color='orange')
-plt.scatter(group1.sepal_length, group1.petal_length, color='red')
-plt.scatter(group2.sepal_length, group2.petal_length, color='green')
-plt.scatter(centers[:,0], centers[:,2], color='black', marker='*', s=200)
-plt.show()
-
-plt.scatter(group0.sepal_length, group0.petal_width, color='orange')
-plt.scatter(group1.sepal_length, group1.petal_width, color='red')
-plt.scatter(group2.sepal_length, group2.petal_width, color='green')
-plt.scatter(centers[:,0], centers[:,3], color='black', marker='*', s=200)
-plt.show()
-
-plt.scatter(group0.sepal_width, group0.petal_length, color='orange')
-plt.scatter(group1.sepal_width, group1.petal_length, color='red')
-plt.scatter(group2.sepal_width, group2.petal_length, color='green')
-plt.scatter(centers[:,1], centers[:,2], color='black', marker='*', s=200)
-plt.show()
-
-plt.scatter(group0.sepal_width, group0.petal_width, color='orange')
-plt.scatter(group1.sepal_width, group1.petal_width, color='red')
-plt.scatter(group2.sepal_width, group2.petal_width, color='green')
-plt.scatter(centers[:,1], centers[:,3], color='black', marker='*', s=200)
-plt.show()
-
-plt.scatter(group0.petal_length, group0.petal_width, color='orange')
-plt.scatter(group1.petal_length, group1.petal_width, color='red')
-plt.scatter(group2.petal_length, group2.petal_width, color='green')
-plt.scatter(centers[:,2], centers[:,3], color='black', marker='*', s=200)
+plt.scatter(group0.petal_length, group0.petal_width, marker='o', facecolors='none', edgecolors='orange', s=30)
+plt.scatter(group1.petal_length, group1.petal_width, marker='o', facecolors='none', edgecolors='red', s=30)
+plt.scatter(group2.petal_length, group2.petal_width, marker='o', facecolors='none', edgecolors='green', s=30)
+plt.scatter(centers[0,2], centers[0,3], color='orange', marker='*', s=200)
+plt.scatter(centers[1,2], centers[1,3], color='red', marker='*', s=200)
+plt.scatter(centers[2,2], centers[2,3], color='green', marker='*', s=200)
+plt.title('dłogość płatka a szerokość płatka')
+plt.xlabel('dłogość płatka')
+plt.ylabel('szerokość płatka')
 plt.show()
 

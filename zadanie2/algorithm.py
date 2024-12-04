@@ -16,35 +16,45 @@ class CustomKMeansResult:
 
 
 def CustomKMeans(cluster_number, values, tolerance):
-    clusters = [0] * len(values)
-    iterations = 1
-    finished = False
+    results = []
+    wcssList = []
 
-    new_centers = []
-    centers = [random.choice(values) for i in range(cluster_number)]
-
-    while not finished:
-
-        for i in range(len(values)):
-            distances = [euclidean_distance(values[i], centre) for centre in centers]
-            clusters[i] = distances.index(min(distances))
+    for repeat in range(10):
+        clusters = [0] * len(values)
+        iterations = 1
+        finished = False
 
         new_centers = []
+        centers = [random.choice(values) for i in range(cluster_number)]
 
-        for i in range(len(centers)):
-            cluster_points = [values[j] for j in range(len(values)) if clusters[j] == i]
-            if cluster_points:
-                new_centers.append(list(mean(cluster_points, axis=0)))
+        while not finished:
+
+            for i in range(len(values)):
+                distances = [euclidean_distance(values[i], centre) for centre in centers]
+                clusters[i] = distances.index(min(distances))
+
+            new_centers = []
+
+            for i in range(len(centers)):
+                cluster_points = [values[j] for j in range(len(values)) if clusters[j] == i]
+                if cluster_points:
+                    new_centers.append(list(mean(cluster_points, axis=0)))
+                else:
+                    new_centers.append(centers[i])
+
+            if all(euclidean_distance(centers[i], new_centers[i]) < tolerance for i in range(len(centers))):
+                finished = True
             else:
-                new_centers.append(centers[i])
+                iterations += 1
+                centers = new_centers[:]
 
-        if all(euclidean_distance(centers[i], new_centers[i]) < tolerance for i in range(len(centers))):
-            finished = True
-        else:
-            iterations += 1
-            centers = new_centers[:]
+        results.append(CustomKMeansResult(len(centers), clusters, new_centers, iterations, wcss_calculate(values, clusters, centers)))
 
-    return CustomKMeansResult(len(centers), clusters, new_centers, iterations, wcss_calculate(values, clusters, centers))
+    minWCSS = min(obj.wcss for obj in results)
+
+    for obj in results:
+        if obj.wcss == minWCSS:
+            return obj
 
 
 def euclidean_distance(value1, value2):
