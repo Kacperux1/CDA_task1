@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ca6475-e00e-4329-b686-62a70fae7900" name="Changes" comment="minor fixes">
-      <change afterPath="$PROJECT_DIR$/zadanie2/algorithm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zadanie2/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zadanie2/formulas2.py" beforeDir="false" afterPath="$PROJECT_DIR$/zadanie2/formulas2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zadanie2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/zadanie2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zadanie2/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/zadanie2/main2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732793922245</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="minor fixes">
+      <option name="closed" value="true" />
+      <created>1733270823518</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733270823518</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
