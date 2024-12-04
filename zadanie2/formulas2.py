@@ -12,7 +12,8 @@ def find_max(values):
             result = value
     return result
 
-#znajdowanie wartości minimalnej
+
+# znajdowanie wartości minimalnej
 def find_min(values):
     result = values[0]
     for value in values:
@@ -21,14 +22,12 @@ def find_min(values):
     return result
 
 
-#funkcja normalizująca dane - wartosci wyjsciowe sa z zakresu 0-1
+# funkcja normalizująca dane - wartosci wyjsciowe sa z zakresu 0-1
 def normalization(values):
     minimal = find_min(values)
     maximal = find_max(values)
     for i in range(len(values)):
-        values[i] = (values[i] - minimal)/(maximal - minimal)
+        values[i] = (values[i] - minimal) / (maximal - minimal)
     return values
-
-
 
 
